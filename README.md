@@ -34,6 +34,6 @@ Code can be viewed here: [ANOVA f-test Feature Selection](CIND820_Feature_select
 
 #### Random Forest
 
-Code can be viewed here: [ANOVA f-test Feature Selection](CIND820_Feature_selection_(Random_Forest).ipynb)
+Code can be viewed here: [Random Forest Feature Selection](CIND820_Feature_selection_(Random_Forest).ipynb)
 
 
