@@ -7,7 +7,7 @@
 The original dataset with 79 feature variables is reduced in size by removing features based on relevance, high correlation, and low variance.
 After completion, the dataset is reduced to 44 feature variables. 
 
-Code can be viewed here: [Dimensionality Reduction](CIND820_Dimensionality_Reduction.ipynb)
+Code can be viewed here: [Dimensionality Reduction - Step 1](CIND820_Dimensionality_Reduction.ipynb)
 
 ### Feature Selection
 
@@ -55,6 +55,8 @@ The Logistic Regression and Random Forest learning algorithms maintain this leve
 
 The accuracy scores for the K Nearest Neighbour algorithm however, begin to drop after approximately 20 features have been added in each of the three feature sets. <br>
 
-Based on these results, there is no major observed benefit to keeping all 44 features, and in the case of the KNN algorithm, it is actually detrimental.<br>
+Based on these results, there is no major observed benefit to keeping all 44 features, and in the case of the KNN algorithm, it is actually a detriment.<br>
 
 Each dataset will be reduced to the top 20 features determined by the feature selection algorithms, and all future machine learning will be conducted with this data. 
+
+Code can be viewed here: [Dimensionality Reduction - Step 2](Select_top_features_(over_.500).ipynb)
