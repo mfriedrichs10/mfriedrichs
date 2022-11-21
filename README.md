@@ -21,21 +21,21 @@ Prior to running each algorithm, the feature variable (win/loss percentage) is c
 
 All feature variables are normalized using Min Max Normalization to scale the data.
 
-In all feature selection procedures, feature selection is done by examining results on the training set only to avoid overfitting.
-The train/test split and scoring is repeated 250 times for each algorithm in order to achieve more accurate results. 
+In all feature selection procedures, feature selection is done by examining results on the training set only to avoid overfitting.<br>
+The train/test split and scoring is repeated 250 times for each algorithm in order to achieve more accurate results.<br>
 After all the feature variables have been scored, the variables (columns) in the original dataset are re-ordered by importance, resulting in three separate datasets - one for each selection algorithm.
 
 #### - Mutual Information Gain
 
-<u>Code can be viewed here:</u> [Mutual Information Gain Feature Selection](CIND820_Feature_selection_(ANOVA_F_test).ipynb)
+Code can be viewed here: [Mutual Information Gain Feature Selection](CIND820_Feature_selection_(ANOVA_F_test).ipynb)
 
 #### - ANOVA f-test
 
-<u>Code can be viewed here:</u> [ANOVA f-test Feature Selection](CIND820_Feature_selection_(info_gain).ipynb)
+Code can be viewed here: [ANOVA f-test Feature Selection](CIND820_Feature_selection_(info_gain).ipynb)
 
 #### - Random Forest
 
-<u>Code can be viewed here:</u> [Random Forest Feature Selection](CIND820_Feature_selection_(Random_Forest).ipynb)
+Code can be viewed here: [Random Forest Feature Selection](CIND820_Feature_selection_(Random_Forest).ipynb)
 
 ### Dimensionality Reduction - Step 2
 
