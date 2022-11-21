@@ -55,6 +55,6 @@ The Logistic Regression and Random Forest learning algorithms maintain this leve
 
 The accuracy scores for the K Nearest Neighbour algorithm however, begin to drop after approximately 20 features have been added in each of the three feature sets. <br>
 
-Based on these results, there is no significant benefit to keeping all 44 features, and in the case of the KNN algorithm, it is actually detrimental.<br>
+Based on these results, there is no major observed benefit to keeping all 44 features, and in the case of the KNN algorithm, it is actually detrimental.<br>
 
 Each dataset will be reduced to the top 20 features determined by the feature selection algorithms, and all future machine learning will be conducted with this data. 
