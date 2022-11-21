@@ -63,7 +63,7 @@ Based on these results, there is no major observed benefit to keeping all 44 fea
 
 Prior to running the machine learning algorithms in the modeling stage, each dataset will be reduced to the top 20 features determined by the feature selection algorithms.
 
-Code can be viewed here: [Dimensionality Reduction - Step 2](Select_top_features_(over_.500).ipynb)
+Code can be viewed here: [Dimensionality Reduction - Step 2](Select_top_features_(WinningRecord).ipynb)
 
 ### Modeling 
 
