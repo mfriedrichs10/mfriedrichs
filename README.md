@@ -44,11 +44,17 @@ Code can be viewed here: [Random Forest Feature Selection](CIND820_Feature_selec
 The three datasets from the previous section are used to 
 
 A for-loop is created to evaluate the accuracy score of each learning algorithm as features are added to the dataset. <br>
+
 A total of 44 iterations will be run, one for each feature variable. <br>
+
 Using 10-fold cross validation, the accuracy scores for each iteration will be captured, and once complete, the average score for each iteration will be calculated and plotted to observe the results. 
 
 In all three algorithms, model accuracy increases significantly as additional features are added, peaking after approximately 5-10 features. <br>
+
 The Logistic Regression and Random Forest learning algorithms maintain this level of accuracy with relatively minor fluctuations until all 44 features have been processed. <br>
+
 The accuracy scores for the K Nearest Neighbour algorithm however, begin to drop after approximately 20 features have been added in each of the three feature sets. <br>
+
 Based on these results, there is no significant benefit to keeping all 44 features, and in the case of the KNN algorithm, it is actually detrimental.<br>
+
 Each dataset will be reduced to the top 20 features determined by the feature selection algorithms, and all future machine learning will be conducted with this data. 
