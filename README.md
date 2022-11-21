@@ -21,6 +21,9 @@ Prior to running each algorithm, the feature variable (win/loss percentage) is c
 
 All feature variables are normalized using Min Max Normalization to scale the data.
 
+In all feature selection procedures, feature selection is done by examining results on the training set only to avoid overfitting.
+The train/test split and scoring is repeated 250 times for each algorithm in order to achieve more accurate results. 
+
 #### Mutual Information Gain
 
 Code can be viewed here: [Mutual Information Gain Feature Selection](CIND820_Feature_selection_(ANOVA_F_test).ipynb)
@@ -28,3 +31,9 @@ Code can be viewed here: [Mutual Information Gain Feature Selection](CIND820_Fea
 #### ANOVA f-test
 
 Code can be viewed here: [ANOVA f-test Feature Selection](CIND820_Feature_selection_(info_gain).ipynb)
+
+#### Random Forest
+
+Code can be viewed here: [ANOVA f-test Feature Selection](CIND820_Feature_selection_(Random Forest).ipynb)
+
+
