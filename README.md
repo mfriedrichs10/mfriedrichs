@@ -41,8 +41,8 @@ Code can be viewed here: [Random Forest Feature Selection](CIND820_Feature_selec
 
 The three datasets from the previous section are used to 
 
-A for-loop is created to evaluate the accuracy score of each learning algorithm as features are added to the dataset. 
-A total of 44 iterations will be run, one for each feature variable. 
+A for-loop is created to evaluate the accuracy score of each learning algorithm as features are added to the dataset. <br>
+A total of 44 iterations will be run, one for each feature variable. <br>
 Using 10-fold cross validation, the accuracy scores for each iteration will be captured, and once complete, the average score for each iteration will be calculated and plotted to observe the results. 
 
 In all three algorithms, model accuracy increases significantly as additional features are added, peaking after approximately 5-10 features. 
