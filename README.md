@@ -25,7 +25,7 @@ In all feature selection procedures, feature selection is done by examining resu
 The train/test split and scoring is repeated 250 times for each algorithm in order to achieve more accurate results. 
 After all the feature variables have been scored, the variables (columns) in the original dataset are re-ordered by importance, resulting in three separate datasets - one for each selection algorithm.
 
-<u>#### Mutual Information Gain</u>
+#### <u>Mutual Information Gain</u>
 
 Code can be viewed here: [Mutual Information Gain Feature Selection](CIND820_Feature_selection_(ANOVA_F_test).ipynb)
 
