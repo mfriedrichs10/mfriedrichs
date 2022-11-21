@@ -25,17 +25,17 @@ In all feature selection procedures, feature selection is done by examining resu
 The train/test split and scoring is repeated 250 times for each algorithm in order to achieve more accurate results. 
 After all the feature variables have been scored, the variables (columns) in the original dataset are re-ordered by importance, resulting in three separate datasets - one for each selection algorithm.
 
-#### <u>Mutual Information Gain</u>
+#### - Mutual Information Gain
 
-Code can be viewed here: [Mutual Information Gain Feature Selection](CIND820_Feature_selection_(ANOVA_F_test).ipynb)
+<u>Code can be viewed here:</u> [Mutual Information Gain Feature Selection](CIND820_Feature_selection_(ANOVA_F_test).ipynb)
 
-#### * ANOVA f-test
+#### - ANOVA f-test
 
-Code can be viewed here: [ANOVA f-test Feature Selection](CIND820_Feature_selection_(info_gain).ipynb)
+<u>Code can be viewed here:</u> [ANOVA f-test Feature Selection](CIND820_Feature_selection_(info_gain).ipynb)
 
-#### * Random Forest
+#### - Random Forest
 
-Code can be viewed here: [Random Forest Feature Selection](CIND820_Feature_selection_(Random_Forest).ipynb)
+<u>Code can be viewed here:</u> [Random Forest Feature Selection](CIND820_Feature_selection_(Random_Forest).ipynb)
 
 ### Dimensionality Reduction - Step 2
 
