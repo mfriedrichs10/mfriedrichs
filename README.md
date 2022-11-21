@@ -49,7 +49,7 @@ The three datasets from the previous section are evaluated to determine what eff
 
 A for-loop is created to evaluate the accuracy score of each learning algorithm as features are added to the dataset. <br>
 
-- As an example, loop 1 will calculate the average accuracy achieved by the Logistic Regression model with only 1 feature (column). Loop 2 will calculate the average accuracy with 2 features (columns) selected. Loop 3 will calculate based on 3 columns. And so on until a total of 44 iterations are run, one for each feature variable. <br>
+- As an example, loop 1 will calculate the average accuracy achieved by the machine learning model with only 1 feature (column). Loop 2 will calculate the average accuracy with 2 features (columns) selected. Loop 3 will calculate based on 3 columns. And so on until a total of 44 iterations are run, one for each feature variable. <br>
 
 Using 10-fold cross validation, the accuracy scores for each iteration will be captured, and once complete, the average score for each iteration will be calculated and plotted to observe the results. 
 
@@ -81,7 +81,14 @@ A confusion matrix and classification reports are generated to display the resul
 Each machine learning algorithm is run three times - once on each set of features selected by the feature selection algorithms. 
 The algorithm parameters are evaluated on each set of features, and adjusted accordingly to achieve the highest accuracy. 
 
-#### Logistic Regression
+#### - Logistic Regression
 
+Code can be viewed here: [Logistic Regression](CIND820_Logistic_Regression_(WinningRecord).ipynb)
 
+#### - K Nearest Neighbors
 
+Code can be viewed here: [K Nearest Neighbors](CIND820_K_Nearest_Neighbors_(WinningRecord).ipynb)
+
+#### - Random Forest
+
+Code can be viewed here: [Random Forest](CIND820_Random_Forest_(WinningRecord).ipynb)
