@@ -4,5 +4,5 @@
 
 ### Dimensionality Reduction
 
-[Dimensionality Reduction](CIND820 - Dimensionality Reduction.ipynb)
+[Dimensionality Reduction](CIND820_Dimensionality_Reduction.ipynb)
 
