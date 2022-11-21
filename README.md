@@ -22,7 +22,9 @@ Prior to running each algorithm, the feature variable (win/loss percentage) is c
 All feature variables are normalized using Min Max Normalization to scale the data.
 
 In all feature selection procedures, feature selection is done by examining results on the training set only to avoid overfitting.<br>
+
 The train/test split and scoring is repeated 250 times for each algorithm in order to achieve more accurate results.<br>
+
 After all the feature variables have been scored, the variables (columns) in the original dataset are re-ordered by importance, resulting in three separate datasets - one for each selection algorithm.
 
 #### - Mutual Information Gain
