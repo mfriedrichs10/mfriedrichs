@@ -15,7 +15,9 @@ Feature selection is conducted using three feature selection algorithms - Mutual
 
 Prior to running each algorithm, the feature variable (win/loss percentage) is converted into a binary class variable with values 0 and 1.
 <br>
-0 represents a winning percentage below .500 and 1 represents a winning percentage above .500
+- 0 represents a winning percentage below .500
+<br>
+- 1 represents a winning percentage above .500
 
 All feature variables are normalized using Min Max Normalization to scale the data.
 
