@@ -17,6 +17,7 @@ Prior to running each algorithm, the feature variable (win/loss percentage) is c
 <br>
 * 0 represents a winning percentage below .500
 <br>
+
 * 1 represents a winning percentage above .500
 <br>
 
