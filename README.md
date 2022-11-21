@@ -65,6 +65,23 @@ Each dataset will be reduced to the top 20 features determined by the feature se
 
 Code can be viewed here: [Dimensionality Reduction - Step 2](Select_top_features_(over_.500).ipynb)
 
+### Modeling 
+
+The three datasets created during the feature selection process are uploaded. 
+Each dataset contains a different ordering of the feature variables based on their significance.
+The top 20 features will be selected from each dataset for machine learning, as established in step 2 of dimensionality reduction.
+
+A stratified train-test split is performed on each dataset, with 80% of the data assigned to training set and 20% assigned to test set.
+Parameter tuning for each machine learning algorithm is performed on the training set using 10-fold cross validation.
+The average accuracy and standard deviation is evaluated for each parameter.
+
+Once the ideal parameters have been identified, the training set is used to fit the model and predictions are then made on the test set.
+A confusion matrix and classification reports are generated to display the results. 
+
+Each machine learning algorithm is run three times - once on each set of features selected by the feature selection algorithms. 
+The algorithm parameters are evaluated on each set of features, and adjusted accordingly to achieve the highest accuracy. 
+
+#### Logistic Regression
 
 
-A stratified train-test split is performed on the dataset, it is desirable to split the dataset into train and test sets in a way that preserves the same proportions of examples in each class as observed in the original dataset. 
+
