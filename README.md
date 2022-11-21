@@ -2,4 +2,4 @@
 
 ## Table of Contents
 
-[a relative link](other_file.md)
+[a relative link](Descriptive_Statistics.ipynb)
