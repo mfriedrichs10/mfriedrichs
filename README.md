@@ -18,7 +18,6 @@ Prior to running each algorithm, the feature variable (win/loss percentage) is c
 * 0 represents a winning percentage below .500
 
 * 1 represents a winning percentage above .500
-<br>
 
 All feature variables are normalized using Min Max Normalization to scale the data.
 
