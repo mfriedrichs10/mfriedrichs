@@ -23,3 +23,8 @@ All feature variables are normalized using Min Max Normalization to scale the da
 
 #### Mutual Information Gain
 
+Code can be viewed here: [Mutual Information Gain Feature Selection](CIND820_Feature_selection_(ANOVA_F_test).ipynb)
+
+#### ANOVA f-test
+
+Code can be viewed here: [ANOVA f-test Feature Selection](CIND820_Feature_selection_(info_gain).ipynb)
