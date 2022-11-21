@@ -2,5 +2,7 @@
 
 ## Table of Contents
 
-[Descriptive Statistics](Descriptive_Statistics.ipynb)
+### Dimensionality Reduction
+
+[Dimensionality Reduction](CIND820 - Dimensionality Reduction.ipynb)
 
