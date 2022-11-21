@@ -64,3 +64,7 @@ Based on these results, there is no major observed benefit to keeping all 44 fea
 Each dataset will be reduced to the top 20 features determined by the feature selection algorithms, and all future machine learning will be conducted with this data. 
 
 Code can be viewed here: [Dimensionality Reduction - Step 2](Select_top_features_(over_.500).ipynb)
+
+
+
+A stratified train-test split is performed on the dataset, it is desirable to split the dataset into train and test sets in a way that preserves the same proportions of examples in each class as observed in the original dataset. 
