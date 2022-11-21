@@ -45,11 +45,11 @@ Code can be viewed here: [Random Forest Feature Selection](CIND820_Feature_selec
 
 ### Dimensionality Reduction - Step 2
 
-The three datasets from the previous section are used to 
+The three datasets from the previous section are evaluated to determine what effect the count of feature variables has on the accuracy of the machine learning models. <br>
 
 A for-loop is created to evaluate the accuracy score of each learning algorithm as features are added to the dataset. <br>
 
-A total of 44 iterations will be run, one for each feature variable. <br>
+- As an example, loop 1 will calculate the average accuracy achieved by the Logistic Regression model with only 1 feature (column). Loop 2 will calculate the average accuracy with 2 features (columns) selected. Loop 3 will calculate based on 3 columns. And so on until a total of 44 iterations are run, one for each feature variable. <br>
 
 Using 10-fold cross validation, the accuracy scores for each iteration will be captured, and once complete, the average score for each iteration will be calculated and plotted to observe the results. 
 
@@ -57,7 +57,7 @@ In all three algorithms, model accuracy increases significantly as additional fe
 
 The Logistic Regression and Random Forest learning algorithms maintain this level of accuracy with relatively minor fluctuations until all 44 features have been processed. <br>
 
-The accuracy scores for the K Nearest Neighbour algorithm however, begin to drop after approximately 20 features have been added in each of the three feature sets. <br>
+The accuracy scores for the K Nearest Neighbors algorithm however, begin to drop after approximately 20 features have been added in each of the three feature sets. <br>
 
 Based on these results, there is no major observed benefit to keeping all 44 features, and in the case of the KNN algorithm, it is actually a detriment.<br>
 
