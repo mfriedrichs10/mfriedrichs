@@ -14,8 +14,8 @@ Code can be viewed here: [Dimensionality Reduction](CIND820_Dimensionality_Reduc
 Feature selection is conducted using three feature selection algorithms - Mutual Information Gain, ANOVA F-test, and Random Forest.
 
 Prior to running each algorithm, the feature variable (win/loss percentage) is converted into a binary class variable represented by values 0 and 1.
-   0 - Winning percentage below .500
-   1 - Winning percentage above .500
+0 - Winning percentage below .500
+1 - Winning percentage above .500
 
 All feature variables are normalized using Min Max Normalization to scale the data.
 
