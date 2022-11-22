@@ -1,6 +1,6 @@
 # mlbmachinelearning
 
-## Table of Contents
+## Summary
 
 ### Section 1 - Predicting Teams with a winning record
 
