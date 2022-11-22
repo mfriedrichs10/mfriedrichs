@@ -2,7 +2,11 @@
 
 ## Table of Contents
 
-### Dimensionality Reduction - Step 1
+### Section 1 - Predicting Teams with a winning record
+
+The first section of this project will be focused on finding the most effective ML model at predicting whether a Major League Baseball team has a winning record or not, based on average yearly statistics. A team has a winning record if their win/loss percentage is above .500 (50%). The dataset being used consists of 79 feature variables (statistics) and 1 target variable (W/L%) accounting for 50 years of team results and 1396 instances. 
+
+#### Dimensionality Reduction - Step 1
 
 The original dataset with 79 feature variables is reduced in size by removing features based on relevance, high correlation, and low variance.
 After completion, the dataset is reduced to 44 feature variables. 
@@ -13,7 +17,7 @@ The target variable is close to evenly balanced, with 48% of the data being in c
 
 Code can be viewed here: [Dimensionality Reduction - Step 1](CIND820_Dimensionality_Reduction.ipynb)
 
-### Feature Selection
+#### Feature Selection
 
 Feature selection is conducted using three feature selection algorithms - Mutual Information Gain, ANOVA F-test, and Random Forest.
 
@@ -31,19 +35,19 @@ The train/test split and scoring is repeated 250 times for each algorithm in ord
 
 After all the feature variables have been scored, the variables (columns) in the original dataset are re-ordered by importance, resulting in three separate datasets - one for each selection algorithm.
 
-#### - Mutual Information Gain
+##### - Mutual Information Gain
 
 Code can be viewed here: [Mutual Information Gain Feature Selection](CIND820_Feature_selection_(ANOVA_F_test).ipynb)
 
-#### - ANOVA f-test
+##### - ANOVA f-test
 
 Code can be viewed here: [ANOVA f-test Feature Selection](CIND820_Feature_selection_(info_gain).ipynb)
 
-#### - Random Forest
+##### - Random Forest
 
 Code can be viewed here: [Random Forest Feature Selection](CIND820_Feature_selection_(Random_Forest).ipynb)
 
-### Dimensionality Reduction - Step 2
+#### Dimensionality Reduction - Step 2
 
 The three datasets from the previous section are evaluated to determine what effect the count of feature variables has on the accuracy of the machine learning models. <br>
 
@@ -65,7 +69,7 @@ Prior to running the machine learning algorithms in the modeling stage, each dat
 
 Code can be viewed here: [Dimensionality Reduction - Step 2](Select_top_features_(WinningRecord).ipynb)
 
-### Modeling 
+#### Modeling 
 
 The three datasets created during the feature selection process are uploaded. 
 Each dataset contains a different ordering of the feature variables based on their significance.
@@ -74,6 +78,7 @@ The top 20 features will be selected from each dataset for machine learning, as 
 A stratified train-test split is performed on each dataset, with 80% of the data assigned to training set and 20% assigned to test set.
 Parameter tuning for each machine learning algorithm is performed on the training set using 10-fold cross validation.
 The average accuracy and standard deviation is evaluated for each parameter.
+Accuracy is being considered the primary evaluation metric given that the target classes are nearly balanced, and not one class is prefered over the other.
 
 Once the ideal parameters have been identified, the training set is used to fit the model and predictions are then made on the test set.
 A confusion matrix and classification reports are generated to display the results. 
@@ -81,14 +86,56 @@ A confusion matrix and classification reports are generated to display the resul
 Each machine learning algorithm is run three times - once on each set of features selected by the feature selection algorithms. 
 The algorithm parameters are evaluated on each set of features, and adjusted accordingly to achieve the highest accuracy. 
 
-#### - Logistic Regression
+##### - Logistic Regression
 
 Code can be viewed here: [Logistic Regression](CIND820_Logistic_Regression_(WinningRecord).ipynb)
 
-#### - K Nearest Neighbors
+##### - K Nearest Neighbors
 
 Code can be viewed here: [K Nearest Neighbors](CIND820_K_Nearest_Neighbors_(WinningRecord).ipynb)
 
-#### - Random Forest
+##### - Random Forest
+
+Code can be viewed here: [Random Forest](CIND820_Random_Forest_(WinningRecord).ipynb)
+
+### Section 2 - Predicting Teams that will make the playoffs
+
+This section of the project is focused on finding the most effective ML model at predicting whether a Major League Baseball team has a winning percentage of .550 and above. This percentage is widely considered to be the "magic number" to qualify for the playoffs. The machine learning process will be very similar to the one followed in Section 1, however this time the target class is highly imbalanced. 
+
+Winning percentages below .550, represented by 0, account for 74% of the data while the remaining 24% is teams over .550. Accuracy will not be an effective evaluation metric for this highly imbalanced dataset, so the F1 score will be considered. The performance of the machine learning algorithms from the previous section will be evaluated on this new dataset, and results will be compared with those from the previous balanced dataset. Different sampling techniques will be assessed to see if they can improve model performance. 
+
+** The following files follow the process as described in Section 1, however performance is now based on the F1 score instead of accuracy. 
+
+#### Feature Selection
+
+##### - Mutual Information Gain
+
+Code can be viewed here: [Mutual Information Gain Feature Selection](CIND820_Feature_selection_(ANOVA_F_test).ipynb)
+
+##### - ANOVA f-test
+
+Code can be viewed here: [ANOVA f-test Feature Selection](CIND820_Feature_selection_(info_gain).ipynb)
+
+##### - Random Forest
+
+Code can be viewed here: [Random Forest Feature Selection](CIND820_Feature_selection_(Random_Forest).ipynb)
+
+
+#### Dimensionality Reduction - Step 2
+
+Code can be viewed here: [Dimensionality Reduction - Step 2](Select_top_features_(WinningRecord).ipynb)
+
+
+#### Modeling 
+
+##### - Logistic Regression
+
+Code can be viewed here: [Logistic Regression](CIND820_Logistic_Regression_(WinningRecord).ipynb)
+
+##### - K Nearest Neighbors
+
+Code can be viewed here: [K Nearest Neighbors](CIND820_K_Nearest_Neighbors_(WinningRecord).ipynb)
+
+##### - Random Forest
 
 Code can be viewed here: [Random Forest](CIND820_Random_Forest_(WinningRecord).ipynb)
