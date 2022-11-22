@@ -8,7 +8,8 @@ The first section of this project will be focused on finding the most effective 
 
 The dataset can be downloaded [here](https://github.com/mfriedrichs10/mlbmachinelearning/blob/main/CIND%20820%20Dataset%20-%20MLB%201972-2021.xlsx)
 <br>
-Combined technical reports can be seen [here](https://github.com/mfriedrichs10/mlbmachinelearning/blob/main/Compiled%20Technical%20Reports.pdf)
+
+Compiled technical reports can be seen [here](https://github.com/mfriedrichs10/mlbmachinelearning/blob/main/Compiled%20Technical%20Reports.pdf)
 
 #### Dimensionality Reduction - Step 1
 
