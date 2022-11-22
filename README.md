@@ -6,7 +6,7 @@
 
 The first section of this project will be focused on finding the most effective ML model at predicting whether a Major League Baseball team has a winning record or not, based on average yearly statistics. A team has a winning record if their win/loss percentage is above .500 (50%). The dataset being used consists of 79 feature variables (statistics) and 1 target variable (W/L%) accounting for 50 years of team results and 1396 instances. 
 
-The dataset can be downloaded [here](Dimensionality_Reduction.ipynb)
+The dataset can be downloaded [here](CIND 820 Dataset - MLB 1972-2021.xlsx)
 
 #### Dimensionality Reduction - Step 1
 
