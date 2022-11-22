@@ -130,12 +130,12 @@ Code can be viewed here: [Dimensionality Reduction - Step 2](Select_top_features
 
 ##### - Logistic Regression
 
-Code can be viewed here: [Logistic Regression](CIND820_Logistic_Regression_(WinningRecord).ipynb)
+Code can be viewed here: [Logistic Regression](CIND820_Logistic_Regression_(Playoffs).ipynb)
 
 ##### - K Nearest Neighbors
 
-Code can be viewed here: [K Nearest Neighbors](CIND820_K_Nearest_Neighbors_(WinningRecord).ipynb)
+Code can be viewed here: [K Nearest Neighbors](CIND820_K_Nearest_Neighbors_(Playoffs).ipynb)
 
 ##### - Random Forest
 
-Code can be viewed here: [Random Forest](CIND820_Random_Forest_(WinningRecord).ipynb)
+Code can be viewed here: [Random Forest](CIND820_Random_Forest_(Playoffs).ipynb)
