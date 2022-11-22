@@ -15,7 +15,7 @@ After reduction, the continuous target variable Win/Loss percentage is converted
 Teams with a winning percentage below .500 will be represented by 0, teams over .500 will be represented by 1.
 The target variable is close to evenly balanced, with 48% of the data being in class 0 and 52% being in class 1. 
 
-Code can be viewed here: [Dimensionality Reduction - Step 1](CIND820_Dimensionality_Reduction.ipynb)
+Code can be viewed here: [Dimensionality Reduction - Step 1](Dimensionality_Reduction.ipynb)
 
 #### Feature Selection
 
