@@ -104,7 +104,7 @@ This section of the project is focused on finding the most effective ML model at
 
 Winning percentages below .550, represented by 0, account for 74% of the data while the remaining 24% is teams over .550. Accuracy will not be an effective evaluation metric for this highly imbalanced dataset, so the F1 score will be considered. The performance of the machine learning algorithms from the previous section will be evaluated on this new dataset, and results will be compared with those from the previous balanced dataset. Different sampling techniques will be assessed to see if they can improve model performance. 
 
-** The following files follow the process as described in Section 1, however performance is now based on the F1 score instead of accuracy. 
+** The files listed below follow the same process as described in Section 1, however performance is now based on the F1 score instead of accuracy. 
 
 #### Feature Selection
 
