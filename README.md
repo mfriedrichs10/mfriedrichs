@@ -42,15 +42,15 @@ After all the feature variables have been scored, the variables (columns) in the
 
 ##### - Mutual Information Gain
 
-Code can be viewed here: [Mutual Information Gain Feature Selection](Feature Selection (Info Gain).ipynb)
+Code can be viewed here: [Mutual Information Gain Feature Selection]('Feature Selection (Info Gain).ipynb')
 
 ##### - ANOVA f-test
 
-Code can be viewed here: [ANOVA f-test Feature Selection](Feature Selection (ANOVA F-test).ipynb)
+Code can be viewed here: [ANOVA f-test Feature Selection]('Feature Selection (ANOVA F-test).ipynb')
 
 ##### - Random Forest
 
-Code can be viewed here: [Random Forest Feature Selection](Feature Selection (Random Forest).ipynb)
+Code can be viewed here: [Random Forest Feature Selection]('Feature Selection (Random Forest).ipynb')
 
 #### Dimensionality Reduction - Step 2
 
