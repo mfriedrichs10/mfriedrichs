@@ -42,7 +42,7 @@ After all the feature variables have been scored, the variables (columns) in the
 
 ##### - Mutual Information Gain
 
-Code can be viewed here: [Mutual Information Gain Feature Selection]('Feature Selection (Info Gain).ipynb')
+Code can be viewed here: [Mutual Information Gain Feature Selection](<Feature Selection (Info Gain).ipynb>)
 
 ##### - ANOVA f-test
 
@@ -50,7 +50,7 @@ Code can be viewed here: [ANOVA f-test Feature Selection](<Feature Selection (AN
 
 ##### - Random Forest
 
-Code can be viewed here: [Random Forest Feature Selection]('Feature Selection (Random Forest).ipynb')
+Code can be viewed here: [Random Forest Feature Selection](<Feature Selection (Random Forest).ipynb>)
 
 #### Dimensionality Reduction - Step 2
 
@@ -72,7 +72,7 @@ Based on these results, there is no major observed benefit to keeping all 44 fea
 
 Prior to running the machine learning algorithms in the modeling stage, each dataset will be reduced to the top 20 features determined by the feature selection algorithms.
 
-Code can be viewed here: [Dimensionality Reduction - Step 2](Select_top_features_(WinningRecord).ipynb)
+Code can be viewed here: [Dimensionality Reduction - Step 2](<Select Top Features (Winning Record).ipynb>)
 
 #### Modeling 
 
@@ -93,15 +93,15 @@ The algorithm parameters are evaluated on each set of features, and adjusted acc
 
 ##### - Logistic Regression
 
-Code can be viewed here: [Logistic Regression](CIND820_Logistic_Regression_(WinningRecord).ipynb)
+Code can be viewed here: [Logistic Regression](<Logistic Regression (Winning Record).ipynb>)
 
 ##### - K Nearest Neighbors
 
-Code can be viewed here: [K Nearest Neighbors](CIND820_K_Nearest_Neighbors_(WinningRecord).ipynb)
+Code can be viewed here: [K Nearest Neighbors](<K Nearest Neighbors (Winning Record).ipynb>)
 
 ##### - Random Forest
 
-Code can be viewed here: [Random Forest](CIND820_Random_Forest_(WinningRecord).ipynb)
+Code can be viewed here: [Random Forest](<Random Forest (Winning Record).ipynb>)
 
 ### Section 2 - Predicting Teams that will make the playoffs
 
@@ -115,32 +115,32 @@ Winning percentages below .550, represented by 0, account for 74% of the data wh
 
 ##### - Mutual Information Gain
 
-Code can be viewed here: [Mutual Information Gain Feature Selection](Feature_selection_(info_gain)_Playoffs.ipynb)
+Code can be viewed here: [Mutual Information Gain Feature Selection](<Feature Selection (Info Gain) - Playoffs.ipynb>)
 
 ##### - ANOVA f-test
 
-Code can be viewed here: [ANOVA f-test Feature Selection](Feature_selection_(ANOVA_F_test)_Playoffs.ipynb)
+Code can be viewed here: [ANOVA f-test Feature Selection](<Feature Selection (ANOVA F-test) - Playoffs.ipynb>)
 
 ##### - Random Forest
 
-Code can be viewed here: [Random Forest Feature Selection](Feature_selection_(Random_Forest)_Playoffs.ipynb)
+Code can be viewed here: [Random Forest Feature Selection](<Feature Selection (Random Forest) - Playoffs.ipynb>)
 
 
 #### Dimensionality Reduction - Step 2
 
-Code can be viewed here: [Dimensionality Reduction - Step 2](Select_top_features_(Playoffs).ipynb)
+Code can be viewed here: [Dimensionality Reduction - Step 2](<Select Top Features (Playoffs).ipynb>)
 
 
 #### Modeling 
 
 ##### - Logistic Regression
 
-Code can be viewed here: [Logistic Regression](CIND820_Logistic_Regression_(Playoffs).ipynb)
+Code can be viewed here: [Logistic Regression](<Logistic Regression (Playoffs).ipynb>)
 
 ##### - K Nearest Neighbors
 
-Code can be viewed here: [K Nearest Neighbors](CIND820_K_Nearest_Neighbors_(Playoffs).ipynb)
+Code can be viewed here: [K Nearest Neighbors](<K Nearest Neighbors (Playoffs).ipynb>)
 
 ##### - Random Forest
 
-Code can be viewed here: [Random Forest](CIND820_Random_Forest_(Playoffs).ipynb)
+Code can be viewed here: [Random Forest](<Random Forest (Playoffs).ipynb>)
