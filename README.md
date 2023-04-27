@@ -20,7 +20,7 @@ After reduction, the continuous target variable Win/Loss percentage is converted
 Teams with a winning percentage below .500 will be represented by 0, teams over .500 will be represented by 1.
 The target variable is close to evenly balanced, with 48% of the data being in class 0 and 52% being in class 1. 
 
-Code can be viewed here: [Dimensionality Reduction - Step 1](Dimensionality_Reduction.ipynb)
+Code can be viewed here: [Dimensionality Reduction - Step 1](Dimensionality Reduction.ipynb)
 
 #### Feature Selection
 
@@ -42,15 +42,15 @@ After all the feature variables have been scored, the variables (columns) in the
 
 ##### - Mutual Information Gain
 
-Code can be viewed here: [Mutual Information Gain Feature Selection](CIND820_Feature_selection_(info_gain).ipynb)
+Code can be viewed here: [Mutual Information Gain Feature Selection](Feature Selection (Info Gain).ipynb)
 
 ##### - ANOVA f-test
 
-Code can be viewed here: [ANOVA f-test Feature Selection](CIND820_Feature_selection_(ANOVA_F_test).ipynb)
+Code can be viewed here: [ANOVA f-test Feature Selection](Feature Selection (ANOVA F-test).ipynb)
 
 ##### - Random Forest
 
-Code can be viewed here: [Random Forest Feature Selection](CIND820_Feature_selection_(Random_Forest).ipynb)
+Code can be viewed here: [Random Forest Feature Selection](Feature Selection (Random Forest).ipynb)
 
 #### Dimensionality Reduction - Step 2
 
