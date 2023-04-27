@@ -46,7 +46,7 @@ Code can be viewed here: [Mutual Information Gain Feature Selection]('Feature Se
 
 ##### - ANOVA f-test
 
-Code can be viewed here: [ANOVA f-test Feature Selection]('Feature Selection (ANOVA F-test).ipynb')
+Code can be viewed here: [ANOVA f-test Feature Selection](<Feature Selection (ANOVA F-test).ipynb>)
 
 ##### - Random Forest
 
