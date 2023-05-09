@@ -4,16 +4,16 @@
 
 #### Database BAK Files
 
-Database backup files that coincide with the SQL code. 
+- Database backup files that coincide with the SQL code. 
 
 #### Housing Data
 
-Data cleaning, string functions, CTE and other logical function examples
+- Data cleaning, string functions, CTE and other logical function examples
 
 #### Shakespeare 
 
-SQL JOIN function examples
+- SQL JOIN function examples
 
 #### Superstore
 
-SQL Window function examples
+- SQL Window function examples
