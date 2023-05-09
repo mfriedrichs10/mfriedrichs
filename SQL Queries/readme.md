@@ -2,18 +2,18 @@
 
 ## Summary
 
-### Database BAK Files
+#### Database BAK Files
 
 Database backup files that coincide with the SQL code. 
 
-### Housing Data
+#### Housing Data
 
-Data cleaning, string functions, CTE and other logical functions
+Data cleaning, string functions, CTE and other logical function examples
 
-### Shakespeare 
+#### Shakespeare 
 
 SQL JOIN function examples
 
-### Superstore
+#### Superstore
 
 SQL Window function examples
