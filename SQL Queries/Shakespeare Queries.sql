@@ -1,20 +1,16 @@
 USE Shakespeare;
 GO
 
-/* Retrieve each character’s name whose abbreviation starts with the letter ’B’ 
-and say a paragraph that includes either the word ’sir’ or the word ’lady’. */
+/* Retrieve each characterâ€™s name whose abbreviation starts with the letter â€™Bâ€™ 
+and say a paragraph that includes either the word â€™sirâ€™ or the word â€™ladyâ€™. */
 
 
-SELECT DISTINCT 
+SELECT DISTINCT
 	c.CharName
 FROM dbo.Characters AS c
-JOIN dbo.Paragraphs AS p ON p.character_id = c.id
-WHERE c.Abbrev LIKE 'B%'
-AND c.id IN 
-	(SELECT DISTINCT p.character_id
-	FROM dbo.Paragraphs AS p 
-	WHERE p.PlainText LIKE '%sir%' OR p.PlainText LIKE '%lady%')
-ORDER BY c.CharName
+JOIN dbo.Paragraphs AS p ON c.id = p.character_id
+WHERE c.Abbrev LIKE 'B%' 
+AND (p.PlainText LIKE '%sir%' OR p.PlainText LIKE '%lady%')
 
 
 /* List the names of characters who have at least two scenes in the Macbeth play. */
@@ -23,12 +19,12 @@ ORDER BY c.CharName
 SELECT 
 	c.CharName,
 	COUNT(DISTINCT ch.Scene) AS SceneCount
-FROM dbo.Characters AS c
-JOIN dbo.Paragraphs AS p ON p.character_id = c.id
-JOIN dbo.Chapters AS ch ON ch.id = p.chapter_id
-JOIN dbo.Works AS w ON w.id = ch.work_id
+FROM dbo.Works AS w
+JOIN dbo.Chapters AS ch ON w.id = ch.work_id
+JOIN dbo.Paragraphs AS p ON ch.id = p.chapter_id
+JOIN dbo.Characters AS c ON p.character_id = c.id
 WHERE w.Title = 'Macbeth'
-AND CharName NOT LIKE '(stage directions)' AND CharName NOT LIKE 'All'
+AND c.CharName NOT IN ('All', '(stage directions)')
 GROUP BY c.CharName
 HAVING COUNT(DISTINCT ch.Scene) > 2
 
@@ -36,120 +32,113 @@ HAVING COUNT(DISTINCT ch.Scene) > 2
 /* Find the number of characters in each work, ordered from the top down. */
 
 
-SELECT 
+SELECT
 	w.Title,
-	COUNT(DISTINCT p.character_id) AS CharacterCount
-FROM dbo.Paragraphs AS p 
-JOIN dbo.Chapters AS ch ON ch.id = p.chapter_id
-JOIN dbo.Works AS w ON w.id = ch.work_id
+	COUNT(DISTINCT c.id) AS CharacterCount
+FROM dbo.Works AS w
+JOIN dbo.Chapters AS ch ON w.id = ch.work_id
+JOIN dbo.Paragraphs AS p ON ch.id = p.chapter_id
+JOIN dbo.Characters AS c ON p.character_id = c.id
+WHERE c.CharName NOT IN ('All','Both','(stage directions)')
 GROUP BY w.Title
 ORDER BY CharacterCount DESC
 
 
-/* Retrieve the number of paragraphs for each character in ’Hamlet’. */
+/* Retrieve the number of paragraphs for each character in â€™Hamletâ€™. */
 
 
-SELECT 
+SELECT
 	c.CharName,
 	COUNT(DISTINCT p.id) AS ParagraphCount
-FROM dbo.Characters AS c
-JOIN dbo.Paragraphs AS p ON p.character_id = c.id
-JOIN dbo.Chapters AS ch ON ch.id = p.chapter_id
-JOIN dbo.Works AS w ON w.id = ch.work_id
-WHERE w.Title = 'Hamlet'
-AND c.CharName NOT LIKE '(stage directions)'
+FROM dbo.Works AS w
+JOIN dbo.Chapters AS ch ON w.id = ch.work_id
+JOIN dbo.Paragraphs AS p ON ch.id = p.chapter_id
+JOIN dbo.Characters AS c ON p.character_id = c.id
+WHERE w.Title = 'Hamlet' 
+AND c.CharName NOT IN ('All', '(stage directions)')
 GROUP BY c.CharName
 ORDER BY ParagraphCount DESC
+
+
+/* Retrieve the name of Hamlet characters who appear in Shakespeareâ€™s other works. */
+
+
+WITH HamletCharacters AS
+	(SELECT DISTINCT
+		ch.CharName
+	FROM dbo.Chapters AS c
+	JOIN dbo.Paragraphs AS p ON c.id = p.chapter_id
+	JOIN dbo.Characters AS ch ON p.character_id = ch.id
+	WHERE c.work_id = 8
+	AND ch.CharName NOT IN ('All', '(stage directions)'))
+
+SELECT * 
+FROM HamletCharacters
+WHERE EXISTS
+	(SELECT * 
+	FROM dbo.Chapters AS c
+	JOIN dbo.Paragraphs AS p ON c.id = p.chapter_id
+	JOIN dbo.Characters AS ch ON p.character_id = ch.id
+	WHERE c.work_id != 8
+	AND ch.CharName = HamletCharacters.CharName)
 
 
 /* Find characters with more than 200 paragraphs of dialogue, and the number of 
 works in which the character appears. */
 
 
-SELECT CharacterName, ParagraphCount, WorkCount
-FROM 
+WITH Combined AS
 	(SELECT 
-	p.character_id AS char_id1,
-	COUNT(DISTINCT p.id) AS ParagraphCount
-	FROM dbo.Paragraphs AS p
-	GROUP BY p.character_id) AS Results1
-JOIN
-	(SELECT 
-	p.character_id AS char_id2,
-	c.CharName AS CharacterName,
-	COUNT(DISTINCT ch.work_id) as WorkCount
-	FROM dbo.Characters AS c
-	JOIN dbo.Paragraphs AS p ON p.character_id = c.id
-	JOIN dbo.Chapters AS ch ON ch.id = p.chapter_id
-	JOIN dbo.Works AS w ON w.id = ch.work_id
-	GROUP BY p.character_id, c.CharName) AS Results2
-ON Results1.char_id1 = Results2.char_id2
-WHERE ParagraphCount > 200
-AND Results2.CharacterName NOT LIKE '(stage directions)'
+		p.character_id AS char_id,
+		p.id AS para_id,
+		c.CharName AS CharName,
+		ch.work_id AS work_id
+	FROM dbo.Works AS w
+	JOIN dbo.Chapters AS ch ON w.id = ch.work_id
+	JOIN dbo.Paragraphs AS p ON ch.id = p.chapter_id
+	JOIN dbo.Characters AS c ON p.character_id = c.id)
+
+SELECT 
+	CharName,
+	COUNT(DISTINCT para_id) AS ParagraphCount,
+	COUNT(DISTINCT work_id) AS WorkCount
+FROM Combined
+WHERE CharName != '(stage directions)'
+GROUP BY char_id, CharName
+HAVING COUNT(DISTINCT para_id) > 200 
 ORDER BY ParagraphCount DESC
 
 
 /* Retrieve the names of all characters who appear in the work that have the 
-highest number of paragraphs among all of Shakespeare’s works. */
+highest number of paragraphs among all of Shakespeareâ€™s works. */
 
 
-SELECT DISTINCT c.CharName
-FROM dbo.Characters AS c
-JOIN dbo.Paragraphs AS p ON p.character_id = c.id
-JOIN dbo.Chapters AS ch ON ch.id = p.chapter_id
-WHERE ch.work_id IN 
-	(SELECT
-		ch.work_id
-	FROM dbo.paragraphs AS p
-	JOIN dbo.chapters AS ch ON ch.id = p.chapter_id
-	GROUP BY ch.work_id
-	HAVING COUNT(DISTINcT p.id) =
-		(SELECT MAX(mycount)
-		FROM (
-			SELECT 
-				ch.work_id,
-				COUNT(DISTINcT p.id) AS "mycount"
-			FROM dbo.paragraphs AS p
-			JOIN dbo.chapters AS ch ON ch.id = p.chapter_id
-			GROUP BY ch.work_id) AS Results))
-AND c.CharName NOT LIKE '(stage directions)'
+SELECT DISTINCT
+	ch.CharName
+FROM dbo.Characters AS ch
+JOIN dbo.Paragraphs AS p ON ch.id = p.character_id
+JOIN dbo.Chapters AS c ON p.chapter_id = c.id
+WHERE c.work_id IN 
+	(SELECT 
+		c.work_id
+	FROM dbo.Chapters AS c
+	JOIN dbo.Paragraphs AS p ON c.id = p.chapter_id
+	GROUP BY c.work_id
+	ORDER BY COUNT(DISTINCT p.id) DESC
+	OFFSET 0 ROWS
+	FETCH NEXT 1 ROWS ONLY)
+AND CharName NOT IN ('All','(stage directions)')
 
 
 /* List the paragraphs that more than five different characters have said. */
 
 
-SELECT
+SELECT 
 	p.PlainText
-FROM dbo.Characters AS c
-JOIN dbo.Paragraphs AS p ON p.character_id = c.id
-WHERE p.PlainText NOT LIKE '[%%]'
+FROM dbo.Works AS w
+JOIN dbo.Chapters AS ch ON w.id = ch.work_id
+JOIN dbo.Paragraphs AS p ON ch.id = p.chapter_id
+JOIN dbo.Characters AS c ON p.character_id = c.id
 GROUP BY p.PlainText
-HAVING COUNT(p.PlainText) > 4 
-AND COUNT(DISTINCT c.id) > 4
+HAVING COUNT(DISTINCT c.id) > 5
 ORDER BY p.PlainText
-
-
-/* Retrieve the name of Hamlet characters who appear in Shakespeare’s other works. */
-
-
-SELECT DISTINCT CharName1
-FROM 
-	(SELECT 
-		c.CharName AS CharName1
-	FROM dbo.Characters AS c
-	JOIN dbo.Paragraphs AS p ON p.character_id = c.id
-	JOIN dbo.Chapters AS ch ON ch.id = p.chapter_id
-	GROUP BY CharName
-	HAVING COUNT(DISTINCT ch.work_id) > 1) AS Results1
-JOIN
-	(SELECT
-		p.id AS ParagraphID,
-		ch.work_id AS WorkID,
-		c.CharName AS CharName2
-	FROM dbo.Characters AS c
-	JOIN dbo.Paragraphs AS p ON p.character_id = c.id
-	JOIN dbo.Chapters AS ch ON ch.id = p.chapter_id) AS Results2
-ON Results1.CharName1 = Results2.CharName2
-WHERE Results2.WorkID IN ('8')
-AND CharName1 NOT LIKE '(stage directions)'
-ORDER BY CharName1
